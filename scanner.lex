@@ -44,10 +44,10 @@ default                 return DEFAULT;
 relop=                  return RELOP;
 contradiction=          return RELOP;
 relop                   return RELOP;
-\n+whitespace*          ++yylineno;
+{\n}{whitespace}*          ++yylineno;
 whitespace              ;
 \/\/.                   return COMMENT;
-{letter}+{[a-zA-Z0-9]}* return ID;
+{letter}{[a-zA-Z0-9]}* return ID;
 {noZeroDigit}{digit}*	return NUM;
 {letter}+				return STRING;
 %%
