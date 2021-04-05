@@ -1,0 +1,23 @@
+1 INT int
+ 1 STRING main
+1 LPAREN (
+1 RPAREN )
+ {	3 INT int
+ 3 STRING x
+ 3 ASSIGN =
+ 3 NUM 5
+3 SC ;
+	5 INT int
+ 5 STRING powerOfx
+ 5 ASSIGN =
+ 5 STRING x
+ * 5 STRING x
+5 SC ;
+	7 STRING print
+7 LPAREN (
+7 STRING x
+7 RPAREN )
+7 SC ;
+	9 RETURN return
+ 09 SC ;
+}
