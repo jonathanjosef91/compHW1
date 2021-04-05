@@ -36,15 +36,15 @@ default                 return DEFAULT;
 :                       return COLON;
 ;                       return SC;
 ,                       return COMMA;
-(                       return LPAREN;
-)                       return RPAREN;
+\(                      return LPAREN;
+\)                      return RPAREN;
 {                       return LBRACE;
 }                       return RBRACE;
 =                       return ASSIGN;
 relop=                  return RELOP;
 contradiction=          return RELOP;
 relop                   return RELOP;
-
+whitespace              ;
 
 {noZeroDigit}{digit}*	return NUM;
 {letter}+				return STRING;
