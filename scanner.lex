@@ -44,9 +44,10 @@ default                 return DEFAULT;
 relop=                  return RELOP;
 contradiction=          return RELOP;
 relop                   return RELOP;
+\n                      ++yylineno;
 whitespace              ;
 \/\/.                   return COMMENT;
-{letter}+                 return
+letter+               return
 {noZeroDigit}{digit}*	return NUM;
 {letter}+				return STRING;
 %%
