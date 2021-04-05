@@ -1,7 +1,10 @@
 #ifndef TOKENS_HPP_ 
 #define TOKENS_HPP_
+
+#include <iostream>
 #include <cstdlib>
-#include <stdio.h>
+#include <cstring>
+using namespace std;
 
 enum tokentype { 
 	VOID = 1, 
@@ -36,8 +39,10 @@ enum tokentype {
 	COMMENT = 30,
 	ID = 31,
 	NUM = 32,
-	STRING = 33
-}; 
+	STRING = 33,
+	NUM_OF_VALID_TOKENS = 34
+};
+
 extern int yylineno;
 extern char* yytext;
 extern size_t yyleng;

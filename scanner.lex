@@ -5,11 +5,14 @@
 
 %option yylineno
 %option noyywrap
-noZeroDigit	([1-9])
-digit		([0-9])
-letter		([a-zA-Z])
-whitespace	([\t\r\n])
-binop       ([+-*/])
+noZeroDigit	    ([1-9])
+digit		    ([0-9])
+letter		    ([a-zA-Z])
+whitespace	    ([\t\r\n])
+binop           ([+-*/])
+relop           ([=<>])
+contradiction   ([!])
+
 %%
 void					return VOID;
 int                     return INT;
@@ -18,6 +21,7 @@ b                       return B;
 bool                    return BOOL;
 and                     return AND;
 or                      return OR;
+not                     return NOT;
 true                    return TRUE;
 false                   return FALSE;
 return                  return RETURN;
@@ -37,7 +41,11 @@ default                 return DEFAULT;
 {                       return LBRACE;
 }                       return RBRACE;
 =                       return ASSIGN;
+relop=                  return RELOP;
+contradiction=          return RELOP;
+relop                   return RELOP;
 
-{noZeroDigit}{digit}*	return INT;
+
+{noZeroDigit}{digit}*	return NUM;
 {letter}+				return STRING;
 %%
