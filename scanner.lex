@@ -45,7 +45,8 @@ relop=                  return RELOP;
 contradiction=          return RELOP;
 relop                   return RELOP;
 whitespace              ;
-
+\/\/.                   return COMMENT;
+{letter}+                 return
 {noZeroDigit}{digit}*	return NUM;
 {letter}+				return STRING;
 %%
